@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>190</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Nave
+--
++nombre: str
++repuestos: list(str)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>60</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Unidad_combate
+--
++id_combate: str
++clave: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>330</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Nave_estelar
+--
++tripulacion: int
++pasaje: int
++clase: Clase</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>330</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Estacion_espacial
+--
++tripulacion: int
++pasaje: int
++ubicacion: Lugar</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>650</x>
+      <y>330</y>
+      <w>130</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Caza_estelar
+--
++dotacion: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>190</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Repuesto
+--
++nombre: str
++proveedor: str
+-cantidad: int
++precio: float
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>80</y>
+      <w>220</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Almacen
+--
++nombre: str
++ubicacion: str
++repuestos_dis: list(str)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>460</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>enumerador
+Lugar
+--
+Endor
+Cumulo
+Nebulosa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>460</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>enumerador
+Clase
+--
+Ejecutor
+Eclipse
+Soberano</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
