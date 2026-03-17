@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>190</y>
-      <w>160</w>
-      <h>80</h>
+      <x>105</x>
+      <y>322</y>
+      <w>231</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Nave
 --
 +nombre: str
-+repuestos: list(str)</panel_attributes>
++repuestos: list(str)
+--
+instalar_repuesto(nombre_pieza:str)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>60</y>
-      <w>160</w>
-      <h>90</h>
+      <x>161</x>
+      <y>231</y>
+      <w>112</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Unidad_combate
 --
@@ -32,10 +34,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>330</y>
-      <w>160</w>
-      <h>90</h>
+      <x>161</x>
+      <y>420</y>
+      <w>112</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Nave_estelar
 --
@@ -47,10 +49,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>330</y>
-      <w>160</w>
-      <h>90</h>
+      <x>28</x>
+      <y>420</y>
+      <w>112</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>Estacion_espacial
 --
@@ -62,10 +64,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
-      <y>330</y>
-      <w>130</w>
-      <h>60</h>
+      <x>294</x>
+      <y>420</y>
+      <w>91</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>Caza_estelar
 --
@@ -75,43 +77,49 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>890</x>
-      <y>190</y>
-      <w>160</w>
-      <h>100</h>
+      <x>406</x>
+      <y>448</y>
+      <w>154</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>Repuesto
 --
 +nombre: str
 +proveedor: str
 -cantidad: int
-+precio: float
++precio: floa
+--
+usar_stock(cantidad:int)
+añadir_stock(cantidad_int)
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>830</x>
-      <y>80</y>
-      <w>220</w>
-      <h>90</h>
+      <x>357</x>
+      <y>217</y>
+      <w>217</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>Almacen
 --
 +nombre: str
 +ubicacion: str
 +repuestos_dis: list(str)
+--
+buscar_pieza(nombre:str)
+registrar_pieza_nueva(repuesto:Repuesto)
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>460</y>
-      <w>160</w>
-      <h>120</h>
+      <x>28</x>
+      <y>511</y>
+      <w>112</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>enumerador
 Lugar
@@ -124,10 +132,10 @@ Nebulosa</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>460</y>
-      <w>160</w>
-      <h>120</h>
+      <x>161</x>
+      <y>511</y>
+      <w>112</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>enumerador
 Clase
@@ -136,5 +144,109 @@ Ejecutor
 Eclipse
 Soberano</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>287</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>371</y>
+      <w>21</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>70</x>
+      <y>371</y>
+      <w>126</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>245</x>
+      <y>371</y>
+      <w>112</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>329</y>
+      <w>35</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>14</x>
+      <y>21</y>
+      <w>406</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>MiImperio
+--
++nombre: str
+--
++registrar_almacen(almacen:Almacen)
++registrar_nave(nave: Nave)
++consultar_repuestos(nombre: str): list
++adquirir_repuesto(nave: Nave, repuesto:Repuesto, cantidad: int)
++mantener_lista_repuestos(almacen: Almacen, repuesto:Repuesto)
++actualizar_stock(almacen: Almacen, repuesto:Repuesto, cantidad:int)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>126</y>
+      <w>112</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0;120.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>182</y>
+      <w>35</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>
