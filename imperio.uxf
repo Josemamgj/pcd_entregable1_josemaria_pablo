@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>105</x>
-      <y>322</y>
+      <x>91</x>
+      <y>301</y>
       <w>231</w>
       <h>56</h>
     </coordinates>
@@ -20,8 +20,8 @@ instalar_repuesto(nombre_pieza:str)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>161</x>
-      <y>231</y>
+      <x>147</x>
+      <y>210</y>
       <w>112</w>
       <h>63</h>
     </coordinates>
@@ -34,8 +34,8 @@ instalar_repuesto(nombre_pieza:str)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>161</x>
-      <y>420</y>
+      <x>147</x>
+      <y>399</y>
       <w>112</w>
       <h>63</h>
     </coordinates>
@@ -49,8 +49,8 @@ instalar_repuesto(nombre_pieza:str)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>28</x>
-      <y>420</y>
+      <x>14</x>
+      <y>399</y>
       <w>112</w>
       <h>63</h>
     </coordinates>
@@ -64,8 +64,8 @@ instalar_repuesto(nombre_pieza:str)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>294</x>
-      <y>420</y>
+      <x>280</x>
+      <y>399</y>
       <w>91</w>
       <h>42</h>
     </coordinates>
@@ -77,8 +77,8 @@ instalar_repuesto(nombre_pieza:str)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>406</x>
-      <y>448</y>
+      <x>392</x>
+      <y>364</y>
       <w>154</w>
       <h>98</h>
     </coordinates>
@@ -97,10 +97,10 @@ añadir_stock(cantidad_int)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>357</x>
-      <y>217</y>
+      <x>343</x>
+      <y>196</y>
       <w>217</w>
-      <h>119</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>Almacen
 --
@@ -116,8 +116,8 @@ registrar_pieza_nueva(repuesto:Repuesto)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>28</x>
-      <y>511</y>
+      <x>14</x>
+      <y>490</y>
       <w>112</w>
       <h>84</h>
     </coordinates>
@@ -132,8 +132,8 @@ Nebulosa</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>161</x>
-      <y>511</y>
+      <x>147</x>
+      <y>490</y>
       <w>112</w>
       <h>84</h>
     </coordinates>
@@ -148,8 +148,8 @@ Soberano</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>287</y>
+      <x>196</x>
+      <y>266</y>
       <w>21</w>
       <h>49</h>
     </coordinates>
@@ -159,8 +159,8 @@ Soberano</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>371</y>
+      <x>196</x>
+      <y>350</y>
       <w>21</w>
       <h>63</h>
     </coordinates>
@@ -170,8 +170,8 @@ Soberano</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>70</x>
-      <y>371</y>
+      <x>56</x>
+      <y>350</y>
       <w>126</w>
       <h>63</h>
     </coordinates>
@@ -181,8 +181,8 @@ Soberano</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>245</x>
-      <y>371</y>
+      <x>231</x>
+      <y>350</y>
       <w>112</w>
       <h>63</h>
     </coordinates>
@@ -192,21 +192,21 @@ Soberano</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
-      <y>329</y>
+      <x>476</x>
+      <y>280</y>
       <w>35</w>
-      <h>133</h>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=0..*</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>14</x>
-      <y>21</y>
+      <x>0</x>
+      <y>0</y>
       <w>406</w>
       <h>168</h>
     </coordinates>
@@ -226,8 +226,8 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>413</x>
-      <y>126</y>
+      <x>399</x>
+      <y>105</y>
       <w>112</w>
       <h>105</h>
     </coordinates>
@@ -239,8 +239,8 @@ m2=1..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>182</y>
+      <x>196</x>
+      <y>161</y>
       <w>35</w>
       <h>63</h>
     </coordinates>
