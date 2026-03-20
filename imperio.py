@@ -11,6 +11,9 @@ class Clase(Enum):
     ECLIPSE=2
     SOBERANO = 3
 
+class StockInsuficienteError(Exception):
+    pass
+
 class Repuesto:
     def __init__(self, nombre, proveedor, cantidad, precio):
         self.nombre = nombre
@@ -18,11 +21,31 @@ class Repuesto:
         self.__cantidad = cantidad
         self.precio =precio
 
+    def usar_stock(self,cantidad_a_usar):
+        if cantidad_a_usar > self.__cantidad:
+            raise StockInsuficienteError("No hay stock suficiente")
+        self.__cantidad -= cantidad_a_usar
+
+    def añadir_stock(self,cantidad_a_añadir):
+        self.__cantidad += cantidad_a_añadir
+
+    def ver_cantidad(self):
+        return self.__cantidad
+
 class Almacen:
     def __init__(self,nombre,ubicacion):
         self.nombre = nombre
         self.ubicacion = ubicacion
         self.repuestos_dis = []
+
+    def buscar_pieza(self,nombre_buscado):
+        for pieza in self.repuestos_dis:
+            if pieza.nombre == nombre_buscado:
+                return pieza
+        return None
+    
+    def registrar_pieza_nueva(self,repuesto):
+        self.repuestos_dis.append(repuesto)
 
 class Unidad_combate(metaclass = ABCMeta):
     def __init__(self, id_combate, clave):
@@ -50,7 +73,7 @@ class Nave_estelar(Nave):
         super().__init__(id_combate, clave, nombre)
         self.tripulacion = tripulacion
         self.pasaje = pasaje
-        self-clase = clase_nave
+        self.clase = clase_nave
 
 class Caza_estelar(Nave):
     def __init__(self, id_combate, clave, nombre, dotacion):
@@ -73,7 +96,7 @@ class MiImperio:
     def consultar_repuestos(self, nombre_pieza):
         resultados = []
         for almacen in self.__almacenes:
-            pieza_encontrada = almacenes.buscar_pieza(nombre_pieza)
+            pieza_encontrada = almacen.buscar_pieza(nombre_pieza)
             if pieza_encontrada is not None:
                 resultados.append((almacen.nombre, pieza_encontrada))
         
@@ -97,4 +120,27 @@ class MiImperio:
         repuesto.añadir_stock(cantidad_a_añadir)
         print(f"stock de {repuesto.nombre} actualizado, ahora hay {repuesto.ver_cantidad()} unidades")
 
-        
+
+
+#PRUEBAS Y TEST
+if __name__ == "__main__":
+    sistema = MiImperio("Imperio General")
+
+    almacen_endor = Almacen("Almacen principal", Lugar.ENDOR)
+    sistema.registrar_almacen(almacen_endor)
+
+    motor = Repuesto("Motor 1", "Audi", 5, 1500)
+    pantalla = Repuesto("Pantalla 1", "lg", 3, 500)
+
+    sistema.mantener_lista_repuestos(almacen_endor, motor)
+    sistema.mantener_lista_repuestos(almacen_endor, pantalla)
+
+    caza = Caza_estelar("Nave de ataque", 1111, "nave de darth vader", 1)
+    sistema.registrar_nave(caza)
+
+    sistema.adquirir_repuesto(caza,motor,2)
+    print(f"Catalogo de la nave ahora: {caza.nombre}: {caza.repuestos}")
+
+    #PROBAMOS A COMPRAR MAS DE LO QUE HAY
+    sistema.adquirir_repuesto(caza,pantalla, 10)
+    
