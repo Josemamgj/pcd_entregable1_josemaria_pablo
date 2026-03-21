@@ -14,19 +14,32 @@ class Clase(Enum):
 class StockInsuficienteError(Exception):
     pass
 
+class ParametroInvalidoError(Exception):
+    pass
+
 class Repuesto:
     def __init__(self, nombre, proveedor, cantidad, precio):
+
+        if cantidad < 0 or precio < 0:
+            raise ParametroInvalidoError("El stock  y el precio tienen que ser positivos")
+
         self.nombre = nombre
         self.proveedor =proveedor
         self.__cantidad = cantidad
         self.precio =precio
 
     def usar_stock(self,cantidad_a_usar):
+        if cantidad_a_usar <= 0:
+            raise ParametroInvalidoError("La cantidad a usar debe tener valor")
+
         if cantidad_a_usar > self.__cantidad:
             raise StockInsuficienteError("No hay stock suficiente")
         self.__cantidad -= cantidad_a_usar
 
     def añadir_stock(self,cantidad_a_añadir):
+        if cantidad_a_añadir <= 0:
+            raise ParametroInvalidoError("La cantidad a añadir debe ser mayor a cero")
+
         self.__cantidad += cantidad_a_añadir
 
     def ver_cantidad(self):
@@ -45,6 +58,8 @@ class Almacen:
         return None
     
     def registrar_pieza_nueva(self,repuesto):
+        if not isinstance(repuesto, Repuesto):
+            raise ParametroInvalidoError("Se deben registrar objetos que sean Repuestos")
         self.repuestos_dis.append(repuesto)
 
 class Unidad_combate(metaclass = ABCMeta):
@@ -87,9 +102,13 @@ class MiImperio:
         self.__naves = []
 
     def registrar_almacen(self,almacen):
+        if not isinstance(almacen, Almacen):
+            raise ParametroInvalidoError("El almacen no existe")
         self.__almacenes.append(almacen)
 
     def registrar_nave(self,nave):
+        if not isinstance(nave, Nave):
+            raise ParametroInvalidoError("La nave no existe")
         self.__naves.append(nave)
 
     #METODOS DEL COMANDANTE
@@ -110,16 +129,23 @@ class MiImperio:
             print(f"{cantidad} - {repuesto.nombre} instalados en {nave.nombre}")
         except StockInsuficienteError as e:
             print(f"operacion cancelada: {e}")
+        except ParametroInvalidoError as e:
+            print(f"operación cancelada: {e} ")
 
     #METODOS DEL OPERARIO
     def mantener_lista_repuestos(self, almacen, repuesto_nuevo):
-        almacen.registrar_pieza_nueva(repuesto_nuevo)
-        print(f"Nuevo repuesto registrado {repuesto_nuevo.nombre} en {almacen.nombre}")
+        try: 
+            almacen.registrar_pieza_nueva(repuesto_nuevo)
+            print(f"Nuevo repuesto registrado {repuesto_nuevo.nombre} en {almacen.nombre}")
+        except ParametroInvalidoError as e:
+            print(f"error al registrar: {e}")
 
     def atualizar_stocks(self,almacen,repuesto,cantidad_a_añadir):
-        repuesto.añadir_stock(cantidad_a_añadir)
-        print(f"stock de {repuesto.nombre} actualizado, ahora hay {repuesto.ver_cantidad()} unidades")
-
+        try:
+            repuesto.añadir_stock(cantidad_a_añadir)
+            print(f"stock de {repuesto.nombre} actualizado, ahora hay {repuesto.ver_cantidad()} unidades")
+        except ParametroInvalidoError as e:
+            print(f"error de inventario: {e}")
 
 
 #PRUEBAS Y TEST
